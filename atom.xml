@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Molo&#39;s Blog</title>
+  
+  <subtitle>Hello，Zxy</subtitle>
+  <link href="https://molocher.github.io/atom.xml" rel="self"/>
+  
+  <link href="https://molocher.github.io/"/>
+  <updated>2023-03-24T11:27:48.689Z</updated>
+  <id>https://molocher.github.io/</id>
+  
+  <author>
+    <name>Molo Qu</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>RocketMQ</title>
+    <link href="https://molocher.github.io/2023/03/23/rocketmq/"/>
+    <id>https://molocher.github.io/2023/03/23/rocketmq/</id>
+    <published>2023-03-23T11:40:42.000Z</published>
+    <updated>2023-03-24T11:27:48.689Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;为什么选择RocketMQ&quot;&gt;&lt;a href=&quot;#为什么选择RocketMQ&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="MQ" scheme="https://molocher.github.io/categories/MQ/"/>
+    
+    
+    <category term="MQ" scheme="https://molocher.github.io/tags/MQ/"/>
+    
+    <category term="Java" scheme="https://molocher.github.io/tags/Java/"/>
+    
+    <category term="后端" scheme="https://molocher.github.io/tags/%E5%90%8E%E7%AB%AF/"/>
+    
+  </entry>
+  
+</feed>
