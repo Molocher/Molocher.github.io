@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="contact, Java">
-    <meta name="description" content="Welcome My Blog">
+    <meta name="keywords" content="SpringCloud Eureka, Java">
+    <meta name="description" content="SpringCloud 服务注册与发现组件 Eureka">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>contact | Molo&#39;s Blog</title>
+    <title>SpringCloud Eureka | Molo&#39;s Blog</title>
     <link rel="icon" type="image/jpeg" href="/favicon.jpg">
     
 
@@ -293,12 +293,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">contact</h1>
+                    <h1 class="description center-align post-title">SpringCloud Eureka</h1>
                 </div>
             </div>
         </div>
@@ -320,12 +320,33 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/SpringCloud/">
+                                <span class="chip bg-color">SpringCloud</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/">
+                                <span class="chip bg-color">微服务</span>
+                            </a>
+                        
+                            <a href="/tags/Eureka/">
+                                <span class="chip bg-color">Eureka</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E5%BE%AE%E6%9C%8D%E5%8A%A1/" class="post-category">
+                                微服务
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -334,7 +355,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-03-24
+                    2023-02-17
                 </div>
                 
 
@@ -343,14 +364,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    0
+                    1.8k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    6 分
                 </div>
                 
 
@@ -368,7 +389,113 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <h2 id="Eureka"><a href="#Eureka" class="headerlink" title="Eureka"></a>Eureka</h2><p>Eureka 一词来源于古希腊词汇，是“发现了”的意思。在软件领域，Eureka 是 Netflix 公司开发的一款开源的服务注册与发现组件。</p>
+<p>Spring Cloud 将 Eureka 与 Netflix 中的其他开源服务组件（例如 Ribbon、Feign 以及 Hystrix 等）一起整合进 Spring Cloud Netflix 模块中，整合后的组件全称为 Spring Cloud Netflix Eureka。</p>
+<p>Eureka 是 Spring Cloud Netflix 模块的子模块，它是 Spring Cloud 对 Netflix Eureka 的二次封装，主要负责 Spring Cloud 的服务注册与发现功能。</p>
+<p>Spring Cloud 使用 Spring Boot 思想为 Eureka 增加了自动化配置，开发人员只需要引入相关依赖和注解，就能将 Spring Boot 构建的微服务轻松地与 Eureka 进行整合。</p>
+<h2 id="Eureka两大组件"><a href="#Eureka两大组件" class="headerlink" title="Eureka两大组件"></a>Eureka两大组件</h2><p>Eureka 采用 CS（Client/Server，客户端/服务器） 架构，它包括以下两大组件：</p>
+<ul>
+<li><strong>Eureka Server</strong>：Eureka 服务注册中心，主要用于提供服务注册功能。当微服务启动时，会将自己的服务注册到 Eureka Server。Eureka Server 维护了一个可用服务列表，存储了所有注册到 Eureka Server 的可用服务的信息，这些可用服务可以在 Eureka Server 的管理界面中直观看到。</li>
+<li><strong>Eureka Client</strong>：Eureka 客户端，通常指的是微服务系统中各个微服务，主要用于和 Eureka Server 进行交互。在微服务应用启动后，Eureka Client 会向 Eureka Server 发送心跳（默认周期为 30 秒）。若 Eureka Server 在多个心跳周期内没有接收到某个 Eureka Client 的心跳，Eureka Server 将它从可用服务列表中移除（默认 90 秒）。</li>
+</ul>
+<h2 id="Eureka服务注册发现"><a href="#Eureka服务注册发现" class="headerlink" title="Eureka服务注册发现"></a>Eureka服务注册发现</h2><img src="/2023/02/17/springcloud-eureka/1010305209-0-16797205557751-16797205582612.png" class="" title="Eureka 服务注册与发现">
+
+<p>上图中共涉及到以下 3 个角色：</p>
+<ul>
+<li><strong>服务注册中心（Register Service）</strong>：它是一个 Eureka Server，用于提供服务注册和发现功能。</li>
+<li><strong>服务提供者（Provider Service）</strong>：它是一个 Eureka Client，用于提供服务。它将自己提供的服务注册到服务注册中心，以供服务消费者发现。</li>
+<li><strong>服务消费者（Consumer Service）</strong>：它是一个 Eureka Client，用于消费服务。它可以从服务注册中心获取服务列表，调用所需的服务。</li>
+</ul>
+<p>Eureka 实现服务注册与发现的流程如下：</p>
+<ol>
+<li>搭建一个 Eureka Server 作为服务注册中心；</li>
+<li>服务提供者 Eureka Client 启动时，会把当前服务器的信息以服务名（spring.application.name）的方式注册到服务注册中心；</li>
+<li>服务消费者 Eureka Client 启动时，也会向服务注册中心注册；</li>
+<li>服务消费者还会获取一份可用服务列表，该列表中包含了所有注册到服务注册中心的服务信息（包括服务提供者和自身的信息）；</li>
+<li>在获得了可用服务列表后，服务消费者通过 HTTP 或消息中间件远程调用服务提供者提供的服务。</li>
+</ol>
+<p>服务注册中心（Eureka Server）所扮演的角色十分重要，它是服务提供者和服务消费者之间的桥梁。服务提供者只有将自己的服务注册到服务注册中心才可能被服务消费者调用，而服务消费者也只有通过服务注册中心获取可用服务列表后，才能调用所需的服务。</p>
+<h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><h3 id="Eureka服务注册中心"><a href="#Eureka服务注册中心" class="headerlink" title="Eureka服务注册中心"></a>Eureka服务注册中心</h3><p>配置文件</p>
+<pre class="language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">server</span><span class="token punctuation">:</span>
+  <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">7001</span>  <span class="token comment">#该 Module 的端口号</span>
+<span class="token key atrule">eureka</span><span class="token punctuation">:</span>
+  <span class="token key atrule">instance</span><span class="token punctuation">:</span>
+    <span class="token key atrule">hostname</span><span class="token punctuation">:</span> localhost <span class="token comment">#eureka服务端的实例名称，</span>
+  <span class="token key atrule">client</span><span class="token punctuation">:</span>
+    <span class="token key atrule">register-with-eureka</span><span class="token punctuation">:</span> <span class="token boolean important">false</span> <span class="token comment">#false表示不向注册中心注册自己。</span>
+    <span class="token key atrule">fetch-registry</span><span class="token punctuation">:</span> <span class="token boolean important">false</span> <span class="token comment">#false表示自己端就是注册中心，我的职责就是维护服务实例，并不需要去检索服务</span>
+    <span class="token key atrule">service-url</span><span class="token punctuation">:</span>
+      <span class="token key atrule">defaultZone</span><span class="token punctuation">:</span> http<span class="token punctuation">:</span>//$<span class="token punctuation">{</span>eureka.instance.hostname<span class="token punctuation">}</span><span class="token punctuation">:</span>$<span class="token punctuation">{</span>server.port<span class="token punctuation">}</span>/eureka/ <span class="token comment">#单机版服务注册中心</span></code></pre>
+
+<p>主启动类</p>
+<pre class="language-java" data-language="java"><code class="language-java"><span class="token annotation punctuation">@SpringBootApplication</span>
+<span class="token annotation punctuation">@EnableEurekaServer</span> <span class="token comment">//开启 Eureka server,接受其他微服务的注册</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MicroServiceCloudEureka7001Application</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">SpringApplication</span><span class="token punctuation">.</span><span class="token function">run</span><span class="token punctuation">(</span><span class="token class-name">MicroServiceCloudEureka7001Application</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">,</span> args<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+
+<h3 id="服务提供者"><a href="#服务提供者" class="headerlink" title="服务提供者"></a>服务提供者</h3><p>配置文件</p>
+<pre class="language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">server</span><span class="token punctuation">:</span>
+  <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">8001</span> <span class="token comment">#服务端口号</span>
+<span class="token key atrule">spring</span><span class="token punctuation">:</span>
+  <span class="token key atrule">application</span><span class="token punctuation">:</span>
+    <span class="token key atrule">name</span><span class="token punctuation">:</span> microServiceCloudProviderDept  <span class="token comment">#微服务名称，对外暴漏的微服务名称，十分重要</span>
+<span class="token comment">################################################## JDBC 通用配置  ##########################################</span>
+  <span class="token key atrule">datasource</span><span class="token punctuation">:</span>
+    <span class="token key atrule">username</span><span class="token punctuation">:</span> root        <span class="token comment">#数据库登陆用户名</span>
+    <span class="token key atrule">password</span><span class="token punctuation">:</span> root        <span class="token comment">#数据库登陆密码</span>
+    <span class="token key atrule">url</span><span class="token punctuation">:</span> jdbc<span class="token punctuation">:</span>mysql<span class="token punctuation">:</span>//127.0.0.1<span class="token punctuation">:</span>3306/bianchengbang_jdbc       <span class="token comment">#数据库url</span>
+    <span class="token key atrule">driver-class-name</span><span class="token punctuation">:</span> com.mysql.jdbc.Driver                  <span class="token comment">#数据库驱动</span>
+<span class="token comment">############################### 不检查 spring.config.import=configserver:##################</span>
+<span class="token comment">#  cloud:</span>
+<span class="token comment">#    config:</span>
+<span class="token comment">#      enabled: false</span>
+<span class="token comment">###################################### MyBatis 配置 ######################################</span>
+<span class="token key atrule">mybatis</span><span class="token punctuation">:</span>
+  <span class="token comment"># 指定 mapper.xml 的位置</span>
+  <span class="token key atrule">mapper-locations</span><span class="token punctuation">:</span> classpath<span class="token punctuation">:</span>mybatis/mapper/<span class="token important">*.xml</span>
+  <span class="token comment">#扫描实体类的位置,在此处指明扫描实体类的包，在 mapper.xml 中就可以不写实体类的全路径名</span>
+  <span class="token key atrule">type-aliases-package</span><span class="token punctuation">:</span> net.biancheng.c.entity
+  <span class="token key atrule">configuration</span><span class="token punctuation">:</span>
+    <span class="token comment">#默认开启驼峰命名法，可以不用设置该属性</span>
+    <span class="token key atrule">map-underscore-to-camel-case</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+<span class="token comment">########################################### Spring cloud 自定义服务名称和 ip 地址###############################################</span>
+<span class="token key atrule">eureka</span><span class="token punctuation">:</span>
+  <span class="token key atrule">client</span><span class="token punctuation">:</span> <span class="token comment">#将客户端注册到 eureka 服务列表内</span>
+    <span class="token key atrule">service-url</span><span class="token punctuation">:</span>
+      <span class="token key atrule">defaultZone</span><span class="token punctuation">:</span> http<span class="token punctuation">:</span>//eureka7001.com<span class="token punctuation">:</span>7001/eureka  <span class="token comment">#这个地址是 7001注册中心在 application.yml 中暴露出来额注册地址 （单机版）</span>
+  <span class="token key atrule">instance</span><span class="token punctuation">:</span>
+    <span class="token key atrule">instance-id</span><span class="token punctuation">:</span> spring<span class="token punctuation">-</span>cloud<span class="token punctuation">-</span>provider<span class="token punctuation">-</span><span class="token number">8001</span> <span class="token comment">#自定义服务名称信息</span>
+    <span class="token key atrule">prefer-ip-address</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>  <span class="token comment">#显示访问路径的 ip 地址</span>
+<span class="token comment">########################################## spring cloud 使用 Spring Boot actuator 监控完善信息###################################</span>
+<span class="token comment"># Spring Boot 2.50对 actuator 监控屏蔽了大多数的节点，只暴露了 heath 节点，本段配置（*）就是为了开启所有的节点</span>
+<span class="token key atrule">management</span><span class="token punctuation">:</span>
+  <span class="token key atrule">endpoints</span><span class="token punctuation">:</span>
+    <span class="token key atrule">web</span><span class="token punctuation">:</span>
+      <span class="token key atrule">exposure</span><span class="token punctuation">:</span>
+        <span class="token key atrule">include</span><span class="token punctuation">:</span> <span class="token string">"*"</span>   <span class="token comment"># * 在yaml 文件属于关键字，所以需要加引号</span>
+<span class="token key atrule">info</span><span class="token punctuation">:</span>
+  <span class="token key atrule">app.name</span><span class="token punctuation">:</span> micro<span class="token punctuation">-</span>service<span class="token punctuation">-</span>cloud<span class="token punctuation">-</span>provider<span class="token punctuation">-</span>dept
+  <span class="token key atrule">company.name</span><span class="token punctuation">:</span> c.biancheng.net
+  <span class="token key atrule">build.aetifactId</span><span class="token punctuation">:</span> @project.artifactId@
+  <span class="token key atrule">build.version</span><span class="token punctuation">:</span> @project.version@</code></pre>
+
+<p>主启动类</p>
+<pre class="language-java" data-language="java"><code class="language-java"><span class="token annotation punctuation">@SpringBootApplication</span>
+<span class="token annotation punctuation">@EnableEurekaClient</span> <span class="token comment">// Spring cloud Eureka 客户端，自动将本服务注册到 Eureka Server 注册中心中</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MicroServiceCloudProviderDept8001Application</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">SpringApplication</span><span class="token punctuation">.</span><span class="token function">run</span><span class="token punctuation">(</span><span class="token class-name">MicroServiceCloudProviderDept8001Application</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">,</span> args<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+
+<h2 id="Eureka自我保护机制"><a href="#Eureka自我保护机制" class="headerlink" title="Eureka自我保护机制"></a>Eureka自我保护机制</h2><p>默认情况下，如果 Eureka Server 在一段时间内（默认为 90 秒）没有接收到某个服务提供者（Eureka Client）的心跳，就会将这个服务提供者提供的服务从服务注册表中移除。 这样服务消费者就再也无法从服务注册中心中获取到这个服务了，更无法调用该服务。</p>
+<p>但在实际的分布式微服务系统中，健康的服务（Eureka Client）也有可能会由于网络故障（例如网络延迟、卡顿、拥挤等原因）而无法与 Eureka Server 正常通讯。若此时 Eureka Server 因为没有接收心跳而误将健康的服务从服务列表中移除，这显然是不合理的。而 Eureka 的自我保护机制就是来解决此问题的。</p>
+<p>所谓 “Eureka 的自我保护机制”，其中心思想就是“好死不如赖活着”。如果 Eureka Server 在一段时间内没有接收到 Eureka Client 的心跳，那么 Eureka Server 就会开启自我保护模式，将所有的 Eureka Client 的注册信息保护起来，而不是直接从服务注册表中移除。一旦网络恢复，这些 Eureka Client 提供的服务还可以继续被服务消费者消费。</p>
+<p>综上，Eureka 的自我保护机制是一种应对网络异常的安全保护措施。它的架构哲学是：宁可同时保留所有微服务（健康的服务和不健康的服务都会保留）也不盲目移除任何健康的服务。通过 Eureka 的自我保护机制，可以让 Eureka Server 集群更加的健壮、稳定。</p>
+
                 
             </div>
             <hr/>
@@ -394,7 +521,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://molocher.github.io/contact/index.html">https://molocher.github.io/contact/index.html</a>
+                    <a href="https://molocher.github.io/2023/02/17/springcloud-eureka/">https://molocher.github.io/2023/02/17/springcloud-eureka/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -431,7 +558,19 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/SpringCloud/">
+                                    <span class="chip bg-color">SpringCloud</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/">
+                                    <span class="chip bg-color">微服务</span>
+                                </a>
+                            
+                                <a href="/tags/Eureka/">
+                                    <span class="chip bg-color">Eureka</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -508,39 +647,57 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/contact/index.html">
+                <a href="/2023/02/20/springcloud-ribbon/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="contact">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="SpringCloud-Ribbon">
                         
-                        <span class="card-title">contact</span>
+                        <span class="card-title">SpringCloud-Ribbon</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            SpringCloud 负载均衡组件 Ribbon
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-24
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-02-20
+                        </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Molo Qu
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%BE%AE%E6%9C%8D%E5%8A%A1/" class="post-category">
+                                    微服务
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
-
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/SpringCloud/">
+                        <span class="chip bg-color">SpringCloud</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/">
+                        <span class="chip bg-color">微服务</span>
+                    </a>
+                    
+                    <a href="/tags/%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/">
+                        <span class="chip bg-color">负载均衡</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
@@ -551,34 +708,54 @@
                 本篇&nbsp;<i class="far fa-dot-circle"></i>
             </div>
             <div class="card">
-                <a href="/contact/index.html">
+                <a href="/2023/02/17/springcloud-eureka/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="contact">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="SpringCloud Eureka">
                         
-                        <span class="card-title">contact</span>
+                        <span class="card-title">SpringCloud Eureka</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            SpringCloud 服务注册与发现组件 Eureka
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-24
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-02-17
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Molo Qu
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%BE%AE%E6%9C%8D%E5%8A%A1/" class="post-category">
+                                    微服务
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
 
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/SpringCloud/">
+                        <span class="chip bg-color">SpringCloud</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/">
+                        <span class="chip bg-color">微服务</span>
+                    </a>
+                    
+                    <a href="/tags/Eureka/">
+                        <span class="chip bg-color">Eureka</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>

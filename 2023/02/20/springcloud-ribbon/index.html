@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="contact, Java">
-    <meta name="description" content="Welcome My Blog">
+    <meta name="keywords" content="SpringCloud-Ribbon, Java">
+    <meta name="description" content="SpringCloud 负载均衡组件 Ribbon">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>contact | Molo&#39;s Blog</title>
+    <title>SpringCloud-Ribbon | Molo&#39;s Blog</title>
     <link rel="icon" type="image/jpeg" href="/favicon.jpg">
     
 
@@ -293,12 +293,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">contact</h1>
+                    <h1 class="description center-align post-title">SpringCloud-Ribbon</h1>
                 </div>
             </div>
         </div>
@@ -320,12 +320,33 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/SpringCloud/">
+                                <span class="chip bg-color">SpringCloud</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/">
+                                <span class="chip bg-color">微服务</span>
+                            </a>
+                        
+                            <a href="/tags/%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/">
+                                <span class="chip bg-color">负载均衡</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E5%BE%AE%E6%9C%8D%E5%8A%A1/" class="post-category">
+                                微服务
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -334,7 +355,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-03-24
+                    2023-02-20
                 </div>
                 
 
@@ -343,14 +364,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    0
+                    2.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    7 分
                 </div>
                 
 
@@ -368,7 +389,123 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <h2 id="Ribbon"><a href="#Ribbon" class="headerlink" title="Ribbon"></a>Ribbon</h2><p>Spring Cloud Ribbon 是一套基于 Netflix Ribbon 实现的客户端负载均衡和服务调用工具。</p>
+<p>Netflix Ribbon 是 Netflix 公司发布的开源组件，其主要功能是提供客户端的负载均衡算法和服务调用。Spring Cloud 将其与 Netflix 中的其他开源服务组件（例如 Eureka、Feign 以及 Hystrix 等）一起整合进 Spring Cloud Netflix 模块中，整合后全称为 Spring Cloud Netflix Ribbon。</p>
+<p>Ribbon 是 Spring Cloud Netflix 模块的子模块，它是 Spring Cloud 对 Netflix Ribbon 的二次封装。通过它，我们可以将面向服务的 REST 模板（RestTemplate）请求转换为客户端负载均衡的服务调用。</p>
+<p>Ribbon 是 Spring Cloud 体系中最核心、最重要的组件之一。它虽然只是一个工具类型的框架，并不像 Eureka Server（服务注册中心）那样需要独立部署，但它几乎存在于每一个使用 Spring Cloud 构建的微服务中。</p>
+<p>Spring Cloud 微服务之间的调用，API 网关的请求转发等内容，实际上都是通过 Spring Cloud Ribbon 来实现的，包括后续我们要介绍的 <a target="_blank" rel="noopener" href="http://c.biancheng.net/springcloud/open-feign.html">OpenFeign</a> 也是基于它实现的。</p>
+<h2 id="负载均衡"><a href="#负载均衡" class="headerlink" title="负载均衡"></a>负载均衡</h2><p>在任何一个系统中，负载均衡都是一个十分重要且不得不去实施的内容，它是系统处理高并发、缓解网络压力和服务端扩容的重要手段之一。</p>
+<p>负载均衡（Load Balance） ，简单点说就是将用户的请求平摊分配到多个服务器上运行，以达到扩展服务器带宽、增强数据处理能力、增加吞吐量、提高网络的可用性和灵活性的目的。</p>
+<p>常见的负载均衡方式有两种：</p>
+<ul>
+<li>服务端负载均衡</li>
+<li>客户端负载均衡</li>
+</ul>
+<h3 id="服务端负载均衡"><a href="#服务端负载均衡" class="headerlink" title="服务端负载均衡"></a>服务端负载均衡</h3><p>服务端负载均衡是最常见的负载均衡方式，其工作原理如下图。</p>
+<img src="/2023/02/20/springcloud-ribbon/10122164F-0.png" class="" title="服务端负载均衡工作原理">
+
+<p>服务端负载均衡是在客户端和服务端之间建立一个独立的负载均衡服务器，该服务器既可以是硬件设备（例如 F5），也可以是软件（例如 Nginx）。这个负载均衡服务器维护了一份可用服务端清单，然后通过心跳机制来删除故障的服务端节点，以保证清单中的所有服务节点都是可以正常访问的。</p>
+<p>当客户端发送请求时，该请求不会直接发送到服务端进行处理，而是全部交给负载均衡服务器，由负载均衡服务器按照某种算法（例如轮询、随机等），从其维护的可用服务清单中选择一个服务端，然后进行转发。</p>
+<p>服务端负载均衡具有以下特点：</p>
+<ul>
+<li>需要建立一个独立的负载均衡服务器。</li>
+<li>负载均衡是在客户端发送请求后进行的，因此客户端并不知道到底是哪个服务端提供的服务。</li>
+<li>可用服务端清单存储在负载均衡服务器上。</li>
+</ul>
+<h3 id="客户端负载均衡"><a href="#客户端负载均衡" class="headerlink" title="客户端负载均衡"></a>客户端负载均衡</h3><p>相较于服务端负载均衡，客户端服务在均衡则是一个比较小众的概念。</p>
+<p>客户端负载均衡的工作原理如下图。</p>
+<img src="/2023/02/20/springcloud-ribbon/1012212Q4-1.png" class="" title="客户端负载均衡原理">
+
+<p>客户端负载均衡是将负载均衡逻辑以代码的形式封装到客户端上，即负载均衡器位于客户端。客户端通过服务注册中心（例如 Eureka Server）获取到一份服务端提供的可用服务清单。有了服务清单后，负载均衡器会在客户端发送请求前通过负载均衡算法选择一个服务端实例再进行访问，以达到负载均衡的目的；</p>
+<p>客户端负载均衡也需要心跳机制去维护服务端清单的有效性，这个过程需要配合服务注册中心一起完成。</p>
+<p>客户端负载均衡具有以下特点：</p>
+<ul>
+<li>负载均衡器位于客户端，不需要单独搭建一个负载均衡服务器。</li>
+<li>负载均衡是在客户端发送请求前进行的，因此客户端清楚地知道是哪个服务端提供的服务。</li>
+<li>客户端都维护了一份可用服务清单，而这份清单都是从服务注册中心获取的。</li>
+</ul>
+<p>Ribbon 就是一个基于 HTTP 和 TCP 的客户端负载均衡器，当我们将 Ribbon 和 Eureka 一起使用时，Ribbon 会从 Eureka Server（服务注册中心）中获取服务端列表，然后通过负载均衡策略将请求分摊给多个服务提供者，从而达到负载均衡的目的。</p>
+<h2 id="Ribbon实现服务调用"><a href="#Ribbon实现服务调用" class="headerlink" title="Ribbon实现服务调用"></a>Ribbon实现服务调用</h2><p>Ribbon 可以与 RestTemplate（Rest 模板）配合使用，以实现微服务之间的调用。</p>
+<p>RestTemplate 是 Spring 家族中的一个用于消费第三方 REST 服务的请求框架。RestTemplate 实现了对 HTTP 请求的封装，提供了一套模板化的服务调用方法。通过它，Spring 应用可以很方便地对各种类型的 HTTP 请求进行访问。</p>
+<p>RestTemplate 针对各种类型的 HTTP 请求都提供了相应的方法进行处理，例如 HEAD、GET、POST、PUT、DELETE 等类型的 HTTP 请求，分别对应 RestTemplate 中的 headForHeaders()、getForObject()、postForObject()、put() 以及 delete() 方法。</p>
+<p>Spring Cloud Ribbon 提供了一个 IRule 接口，该接口主要用来定义负载均衡策略，它有 7 个默认实现类，每一个实现类都是一种负载均衡策略。</p>
+<table>
+<thead>
+<tr>
+<th>序号</th>
+<th>实现类</th>
+<th>负载均衡策略</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>RoundRobinRule</td>
+<td>按照线性轮询策略，即按照一定的顺序依次选取服务实例</td>
+</tr>
+<tr>
+<td>2</td>
+<td>RandomRule</td>
+<td>随机选取一个服务实例</td>
+</tr>
+<tr>
+<td>3</td>
+<td>RetryRule</td>
+<td>按照 RoundRobinRule（轮询）的策略来获取服务，如果获取的服务实例为 null 或已经失效，则在指定的时间之内不断地进行重试（重试时获取服务的策略还是 RoundRobinRule 中定义的策略），如果超过指定时间依然没获取到服务实例则返回 null 。</td>
+</tr>
+<tr>
+<td>4</td>
+<td>WeightedResponseTimeRule</td>
+<td>WeightedResponseTimeRule 是 RoundRobinRule 的一个子类，它对 RoundRobinRule 的功能进行了扩展。  根据平均响应时间，来计算所有服务实例的权重，响应时间越短的服务实例权重越高，被选中的概率越大。刚启动时，如果统计信息不足，则使用线性轮询策略，等信息足够时，再切换到 WeightedResponseTimeRule。</td>
+</tr>
+<tr>
+<td>5</td>
+<td>BestAvailableRule</td>
+<td>继承自 ClientConfigEnabledRoundRobinRule。先过滤点故障或失效的服务实例，然后再选择并发量最小的服务实例。</td>
+</tr>
+<tr>
+<td>6</td>
+<td>AvailabilityFilteringRule</td>
+<td>先过滤掉故障或失效的服务实例，然后再选择并发量较小的服务实例。</td>
+</tr>
+<tr>
+<td>7</td>
+<td>ZoneAvoidanceRule</td>
+<td>默认的负载均衡策略，综合判断服务所在区域（zone）的性能和服务（server）的可用性，来选择服务实例。在没有区域的环境下，该策略与轮询（RandomRule）策略类似。</td>
+</tr>
+</tbody></table>
+<h2 id="切换负载均衡策略"><a href="#切换负载均衡策略" class="headerlink" title="切换负载均衡策略"></a>切换负载均衡策略</h2><p>配置类 ConfigBean 中添加以下代码，将负载均衡策略切换为 RandomRule（随机）</p>
+<pre class="language-java" data-language="java"><code class="language-java"><span class="token annotation punctuation">@Bean</span>
+<span class="token keyword">public</span> <span class="token class-name">IRule</span> <span class="token function">myRule</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// RandomRule 为随机策略</span>
+    <span class="token keyword">return</span>  <span class="token keyword">new</span> <span class="token class-name">RandomRule</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+
+<h2 id="定制负载均衡策略"><a href="#定制负载均衡策略" class="headerlink" title="定制负载均衡策略"></a>定制负载均衡策略</h2><p>定义自己的策略类 MyRandomRule extends AbstractLoadBalancerRule </p>
+<p>将我们定制的负载均衡策略实现类注入到容器中，代码如下</p>
+<pre class="language-java" data-language="java"><code class="language-java"><span class="token annotation punctuation">@Configuration</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MySelfRibbonRuleConfig</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Bean</span>
+    <span class="token keyword">public</span> <span class="token class-name">IRule</span> <span class="token function">myRule</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">//自定义 Ribbon 负载均衡策略</span>
+        <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">MyRandomRule</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//自定义，随机选择某一个微服务，执行五次</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+
+<p>在主启动类上使用 @RibbonClient 注解让我们定制的负载均衡策略生效，代码如下。</p>
+<pre class="language-java" data-language="java"><code class="language-java"><span class="token annotation punctuation">@SpringBootApplication</span>
+<span class="token annotation punctuation">@EnableEurekaClient</span>
+<span class="token comment">//自定义 Ribbon 负载均衡策略在主启动类上使用 RibbonClient 注解，在该微服务启动时，就能自动去加载我们自定义的 Ribbon 配置类，从而是配置生效</span>
+<span class="token comment">// name 为需要定制负载均衡策略的微服务名称（application name）</span>
+<span class="token comment">// configuration 为定制的负载均衡策略的配置类，</span>
+<span class="token comment">// 且官方文档中明确提出，该配置类不能在 ComponentScan 注解（SpringBootApplication 注解中包含了该注解）下的包或其子包中，即自定义负载均衡配置类不能在 net.biancheng.c 包及其子包下</span>
+<span class="token annotation punctuation">@RibbonClient</span><span class="token punctuation">(</span>name <span class="token operator">=</span> <span class="token string">"MICROSERVICECLOUDPROVIDERDEPT"</span><span class="token punctuation">,</span> configuration <span class="token operator">=</span> <span class="token class-name">MySelfRibbonRuleConfig</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MicroServiceCloudConsumerDept80Application</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">SpringApplication</span><span class="token punctuation">.</span><span class="token function">run</span><span class="token punctuation">(</span><span class="token class-name">MicroServiceCloudConsumerDept80Application</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">,</span> args<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+
+
                 
             </div>
             <hr/>
@@ -394,7 +531,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://molocher.github.io/contact/index.html">https://molocher.github.io/contact/index.html</a>
+                    <a href="https://molocher.github.io/2023/02/20/springcloud-ribbon/">https://molocher.github.io/2023/02/20/springcloud-ribbon/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -431,7 +568,19 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/SpringCloud/">
+                                    <span class="chip bg-color">SpringCloud</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/">
+                                    <span class="chip bg-color">微服务</span>
+                                </a>
+                            
+                                <a href="/tags/%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/">
+                                    <span class="chip bg-color">负载均衡</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -508,39 +657,53 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/contact/index.html">
+                <a href="/2023/02/25/openfeign/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="contact">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="OpenFeign">
                         
-                        <span class="card-title">contact</span>
+                        <span class="card-title">OpenFeign</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            SpringCloud 服务调用组件 OpenFeign
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-24
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-02-25
+                        </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Molo Qu
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%BE%AE%E6%9C%8D%E5%8A%A1/" class="post-category">
+                                    微服务
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
-
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/SpringCloud/">
+                        <span class="chip bg-color">SpringCloud</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/">
+                        <span class="chip bg-color">微服务</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
@@ -548,37 +711,56 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/contact/index.html">
+                <a href="/2023/02/17/springcloud-eureka/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="contact">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="SpringCloud Eureka">
                         
-                        <span class="card-title">contact</span>
+                        <span class="card-title">SpringCloud Eureka</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            SpringCloud 服务注册与发现组件 Eureka
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-24
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-02-17
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Molo Qu
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%BE%AE%E6%9C%8D%E5%8A%A1/" class="post-category">
+                                    微服务
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
-
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/SpringCloud/">
+                        <span class="chip bg-color">SpringCloud</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/">
+                        <span class="chip bg-color">微服务</span>
+                    </a>
+                    
+                    <a href="/tags/Eureka/">
+                        <span class="chip bg-color">Eureka</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>

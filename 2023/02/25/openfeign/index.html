@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="contact, Java">
-    <meta name="description" content="Welcome My Blog">
+    <meta name="keywords" content="OpenFeign, Java">
+    <meta name="description" content="SpringCloud 服务调用组件 OpenFeign">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>contact | Molo&#39;s Blog</title>
+    <title>OpenFeign | Molo&#39;s Blog</title>
     <link rel="icon" type="image/jpeg" href="/favicon.jpg">
     
 
@@ -293,12 +293,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">contact</h1>
+                    <h1 class="description center-align post-title">OpenFeign</h1>
                 </div>
             </div>
         </div>
@@ -320,12 +320,29 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/SpringCloud/">
+                                <span class="chip bg-color">SpringCloud</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/">
+                                <span class="chip bg-color">微服务</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E5%BE%AE%E6%9C%8D%E5%8A%A1/" class="post-category">
+                                微服务
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -334,7 +351,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-03-24
+                    2023-02-25
                 </div>
                 
 
@@ -343,14 +360,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    0
+                    1.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    4 分
                 </div>
                 
 
@@ -368,7 +385,116 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <h2 id="OpenFeign"><a href="#OpenFeign" class="headerlink" title="OpenFeign"></a>OpenFeign</h2><p>Netflix Feign 是 Netflix 公司发布的一种实现负载均衡和服务调用的开源组件。Spring Cloud 将其与 Netflix 中的其他开源服务组件（例如 Eureka、Ribbon 以及 Hystrix 等）一起整合进 Spring Cloud Netflix 模块中，整合后全称为 Spring Cloud Netflix Feign。</p>
+<p>Feign 对 <a target="_blank" rel="noopener" href="http://c.biancheng.net/springcloud/ribbon.html">Ribbon</a> 进行了集成，利用 Ribbon 维护了一份可用服务清单，并通过 Ribbon 实现了客户端的负载均衡。</p>
+<p>Feign 是一种声明式服务调用组件，它在 RestTemplate 的基础上做了进一步的封装。通过 Feign，我们只需要声明一个接口并通过注解进行简单的配置（类似于 Dao 接口上面的 Mapper 注解一样）即可实现对 HTTP 接口的绑定。</p>
+<p>通过 Feign，我们可以像调用本地方法一样来调用远程服务，而完全感觉不到这是在进行远程调用。</p>
+<p>Feign 支持多种注解，例如 Feign 自带的注解以及 JAX-RS 注解等，但遗憾的是 Feign 本身并不支持 Spring MVC 注解，这无疑会给广大 Spring 用户带来不便。</p>
+<p>2019 年 Netflix 公司宣布 Feign 组件正式进入停更维护状态，于是 Spring 官方便推出了一个名为 OpenFeign 的组件作为 Feign 的替代方案。</p>
+<p>OpenFeign 全称 Spring Cloud OpenFeign，它是 Spring 官方推出的一种声明式服务调用与负载均衡组件，它的出现就是为了替代进入停更维护状态的 Feign。</p>
+<p>OpenFeign 是 Spring Cloud 对 Feign 的二次封装，它具有 Feign 的所有功能，并在 Feign 的基础上增加了对 Spring MVC 注解的支持，例如 @RequestMapping、@GetMapping 和 @PostMapping 等。</p>
+<h2 id="OpenFeign常用注解"><a href="#OpenFeign常用注解" class="headerlink" title="OpenFeign常用注解"></a>OpenFeign常用注解</h2><table>
+<thead>
+<tr>
+<th>注解</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>@FeignClient</td>
+<td>该注解用于通知 OpenFeign 组件对 @RequestMapping 注解下的接口进行解析，并通过动态代理的方式产生实现类，实现负载均衡和服务调用。</td>
+</tr>
+<tr>
+<td>@EnableFeignClients</td>
+<td>该注解用于开启 OpenFeign 功能，当 Spring Cloud 应用启动时，OpenFeign 会扫描标有 @FeignClient 注解的接口，生成代理并注册到 Spring 容器中。</td>
+</tr>
+<tr>
+<td>@RequestMapping</td>
+<td>Spring MVC 注解，在 Spring MVC 中使用该注解映射请求，通过它来指定控制器（Controller）可以处理哪些 URL 请求，相当于 Servlet 中 web.xml 的配置。</td>
+</tr>
+<tr>
+<td>@GetMapping</td>
+<td>Spring MVC 注解，用来映射 GET 请求，它是一个组合注解，相当于 @RequestMapping(method = RequestMethod.GET) 。</td>
+</tr>
+<tr>
+<td>@PostMapping</td>
+<td>Spring MVC 注解，用来映射 POST 请求，它是一个组合注解，相当于 @RequestMapping(method = RequestMethod.POST) 。</td>
+</tr>
+</tbody></table>
+<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><ol>
+<li><p>配置文件</p>
+<pre class="language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">server</span><span class="token punctuation">:</span>
+  <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">80</span>
+<span class="token key atrule">eureka</span><span class="token punctuation">:</span>
+  <span class="token key atrule">client</span><span class="token punctuation">:</span>
+    <span class="token key atrule">register-with-eureka</span><span class="token punctuation">:</span> <span class="token boolean important">false</span> <span class="token comment">#服务消费者可以不向服务注册中心注册服务</span>
+    <span class="token key atrule">service-url</span><span class="token punctuation">:</span>
+      <span class="token key atrule">defaultZone</span><span class="token punctuation">:</span> http<span class="token punctuation">:</span>//eureka7001.com<span class="token punctuation">:</span>7001/eureka/<span class="token punctuation">,</span>http<span class="token punctuation">:</span>//eureka7002.com<span class="token punctuation">:</span>7002/eureka/<span class="token punctuation">,</span>http<span class="token punctuation">:</span>//eureka7003.com<span class="token punctuation">:</span>7003/eureka/
+    <span class="token key atrule">fetch-registry</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>  <span class="token comment">#服务消费者客户端需要去检索服务</span></code></pre>
+</li>
+<li><p>Service接口</p>
+<p>创建一个名为 DeptFeignService 的接口，并在该接口上使用 @FeignClient 注解实现对服务接口的绑定</p>
+<pre class="language-java" data-language="java"><code class="language-java"><span class="token comment">//添加为容器内的一个组件</span>
+<span class="token annotation punctuation">@Component</span>
+<span class="token comment">// 服务提供者提供的服务名称，即 application.name</span>
+<span class="token annotation punctuation">@FeignClient</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">"MICROSERVICECLOUDPROVIDERDEPT"</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">DeptFeignService</span> <span class="token punctuation">{</span>
+    <span class="token comment">//对应服务提供者（8001、8002、8003）Controller 中定义的方法</span>
+    <span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">"/dept/get/{id}"</span><span class="token punctuation">,</span> method <span class="token operator">=</span> <span class="token class-name">RequestMethod</span><span class="token punctuation">.</span><span class="token constant">GET</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> <span class="token class-name">Dept</span> <span class="token function">get</span><span class="token punctuation">(</span><span class="token annotation punctuation">@PathVariable</span><span class="token punctuation">(</span><span class="token string">"id"</span><span class="token punctuation">)</span> <span class="token keyword">int</span> id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">"/dept/list"</span><span class="token punctuation">,</span> method <span class="token operator">=</span> <span class="token class-name">RequestMethod</span><span class="token punctuation">.</span><span class="token constant">GET</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Dept</span><span class="token punctuation">&gt;</span></span> <span class="token function">list</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+
+<p>在编写服务绑定接口时，需要注意以下 2 点：</p>
+<ul>
+<li>在 @FeignClient 注解中，value 属性的取值为：服务提供者的服务名，即服务提供者配置文件（application.yml）中 spring.application.name 的取值。</li>
+<li>接口中定义的每个方法都与服务提供者（即 micro-service-cloud-provider-dept-8001 等）中 Controller 定义的服务方法对应。</li>
+</ul>
+</li>
+<li><p>主启动类配置</p>
+<p>主启动类上添加 @EnableFeignClients 注解开启 OpenFeign 功能</p>
+<pre class="language-java" data-language="java"><code class="language-java"><span class="token annotation punctuation">@SpringBootApplication</span>
+<span class="token annotation punctuation">@EnableFeignClients</span> <span class="token comment">//开启 OpenFeign 功能</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MicroServiceCloudConsumerDeptFeignApplication</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">SpringApplication</span><span class="token punctuation">.</span><span class="token function">run</span><span class="token punctuation">(</span><span class="token class-name">MicroServiceCloudConsumerDeptFeignApplication</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">,</span> args<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></li>
+</ol>
+<h2 id="OpenFeign超时控制"><a href="#OpenFeign超时控制" class="headerlink" title="OpenFeign超时控制"></a>OpenFeign超时控制</h2><p>默认超时时间1秒，修改超时时间，配置文件添加</p>
+<pre class="language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">ribbon</span><span class="token punctuation">:</span>
+  <span class="token key atrule">ReadTimeout</span><span class="token punctuation">:</span> <span class="token number">6000</span> <span class="token comment">#建立连接所用的时间，适用于网络状况正常的情况下，两端两端连接所用的时间</span>
+  <span class="token key atrule">ConnectionTimeout</span><span class="token punctuation">:</span> <span class="token number">6000</span> <span class="token comment">#建立连接后，服务器读取到可用资源的时间</span></code></pre>
+
+<h2 id="OpenFeign日志增强"><a href="#OpenFeign日志增强" class="headerlink" title="OpenFeign日志增强"></a>OpenFeign日志增强</h2><p>配置文件新增配置</p>
+<pre class="language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">logging</span><span class="token punctuation">:</span>
+  <span class="token key atrule">level</span><span class="token punctuation">:</span>
+    <span class="token comment">#feign 日志以什么样的级别监控该接口</span>
+    <span class="token key atrule">net.biancheng.c.service.DeptFeignService</span><span class="token punctuation">:</span> debug</code></pre>
+
+<p>新增配置类</p>
+<pre class="language-java" data-language="java"><code class="language-java"><span class="token annotation punctuation">@Configuration</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ConfigBean</span> <span class="token punctuation">{</span>
+    <span class="token comment">/**
+     * OpenFeign 日志增强
+     * 配置 OpenFeign 记录哪些内容
+     */</span>
+    <span class="token annotation punctuation">@Bean</span>
+    <span class="token class-name">Logger<span class="token punctuation">.</span>Level</span> <span class="token function">feginLoggerLevel</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token class-name">Logger<span class="token punctuation">.</span>Level</span><span class="token punctuation">.</span><span class="token constant">FULL</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+
+<p>该配置的作用是通过配置的 Logger.Level 对象告诉 OpenFeign 记录哪些日志内容。</p>
+<p> Logger.Level 的具体级别如下：</p>
+<ul>
+<li>NONE：不记录任何信息。</li>
+<li>BASIC：仅记录请求方法、URL 以及响应状态码和执行时间。</li>
+<li>HEADERS：除了记录 BASIC 级别的信息外，还会记录请求和响应的头信息。</li>
+<li>FULL：记录所有请求与响应的明细，包括头信息、请求体、元数据等等。</li>
+</ul>
+
                 
             </div>
             <hr/>
@@ -394,7 +520,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://molocher.github.io/contact/index.html">https://molocher.github.io/contact/index.html</a>
+                    <a href="https://molocher.github.io/2023/02/25/openfeign/">https://molocher.github.io/2023/02/25/openfeign/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -431,7 +557,15 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/SpringCloud/">
+                                    <span class="chip bg-color">SpringCloud</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/">
+                                    <span class="chip bg-color">微服务</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -508,39 +642,57 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/contact/index.html">
+                <a href="/2023/02/28/springcloud-gateway/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="contact">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="SpringCloud-Gateway">
                         
-                        <span class="card-title">contact</span>
+                        <span class="card-title">SpringCloud-Gateway</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            SpringCloud Gateway
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-24
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-02-28
+                        </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Molo Qu
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%BE%AE%E6%9C%8D%E5%8A%A1/" class="post-category">
+                                    微服务
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
-
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/SpringCloud/">
+                        <span class="chip bg-color">SpringCloud</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/">
+                        <span class="chip bg-color">微服务</span>
+                    </a>
+                    
+                    <a href="/tags/Gateway/">
+                        <span class="chip bg-color">Gateway</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
@@ -548,37 +700,56 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/contact/index.html">
+                <a href="/2023/02/20/springcloud-ribbon/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="contact">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="SpringCloud-Ribbon">
                         
-                        <span class="card-title">contact</span>
+                        <span class="card-title">SpringCloud-Ribbon</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            SpringCloud 负载均衡组件 Ribbon
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-24
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-02-20
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Molo Qu
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%BE%AE%E6%9C%8D%E5%8A%A1/" class="post-category">
+                                    微服务
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
-
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/SpringCloud/">
+                        <span class="chip bg-color">SpringCloud</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/">
+                        <span class="chip bg-color">微服务</span>
+                    </a>
+                    
+                    <a href="/tags/%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/">
+                        <span class="chip bg-color">负载均衡</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>

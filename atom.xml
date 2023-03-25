@@ -45,4 +45,145 @@
     
   </entry>
   
+  <entry>
+    <title>SpringCloud-Hystrix</title>
+    <link href="https://molocher.github.io/2023/03/04/springcloud-hystrix/"/>
+    <id>https://molocher.github.io/2023/03/04/springcloud-hystrix/</id>
+    <published>2023-03-04T05:32:44.000Z</published>
+    <updated>2023-03-25T06:10:48.993Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;Hystrix&quot;&gt;&lt;a href=&quot;#Hystrix&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="微服务" scheme="https://molocher.github.io/categories/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
+    
+    
+    <category term="SpringCloud" scheme="https://molocher.github.io/tags/SpringCloud/"/>
+    
+    <category term="微服务" scheme="https://molocher.github.io/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SpringCloud-Gateway</title>
+    <link href="https://molocher.github.io/2023/02/28/springcloud-gateway/"/>
+    <id>https://molocher.github.io/2023/02/28/springcloud-gateway/</id>
+    <published>2023-02-28T05:29:01.000Z</published>
+    <updated>2023-03-25T06:08:07.141Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;Gateway&quot;&gt;&lt;a href=&quot;#Gateway&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="微服务" scheme="https://molocher.github.io/categories/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
+    
+    
+    <category term="SpringCloud" scheme="https://molocher.github.io/tags/SpringCloud/"/>
+    
+    <category term="微服务" scheme="https://molocher.github.io/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
+    
+    <category term="Gateway" scheme="https://molocher.github.io/tags/Gateway/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>OpenFeign</title>
+    <link href="https://molocher.github.io/2023/02/25/openfeign/"/>
+    <id>https://molocher.github.io/2023/02/25/openfeign/</id>
+    <published>2023-02-25T05:25:19.000Z</published>
+    <updated>2023-03-25T05:29:34.190Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;OpenFeign&quot;&gt;&lt;a href=&quot;#OpenFeign&quot; class=&quot;headerlink&quot; title=&quot;OpenFeign&quot;&gt;&lt;/a&gt;OpenFeign&lt;/h2&gt;&lt;p&gt;Netflix Feign 是 Netflix</summary>
+        
+      
+    
+    
+    
+    <category term="微服务" scheme="https://molocher.github.io/categories/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
+    
+    
+    <category term="SpringCloud" scheme="https://molocher.github.io/tags/SpringCloud/"/>
+    
+    <category term="微服务" scheme="https://molocher.github.io/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SpringCloud-Ribbon</title>
+    <link href="https://molocher.github.io/2023/02/20/springcloud-ribbon/"/>
+    <id>https://molocher.github.io/2023/02/20/springcloud-ribbon/</id>
+    <published>2023-02-20T05:15:13.000Z</published>
+    <updated>2023-03-25T06:08:26.805Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Ribbon&quot;&gt;&lt;a href=&quot;#Ribbon&quot; class=&quot;headerlink&quot; title=&quot;Ribbon&quot;&gt;&lt;/a&gt;Ribbon&lt;/h2&gt;&lt;p&gt;Spring Cloud Ribbon 是一套基于 Netflix Ribbon</summary>
+        
+      
+    
+    
+    
+    <category term="微服务" scheme="https://molocher.github.io/categories/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
+    
+    
+    <category term="SpringCloud" scheme="https://molocher.github.io/tags/SpringCloud/"/>
+    
+    <category term="微服务" scheme="https://molocher.github.io/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
+    
+    <category term="负载均衡" scheme="https://molocher.github.io/tags/%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SpringCloud Eureka</title>
+    <link href="https://molocher.github.io/2023/02/17/springcloud-eureka/"/>
+    <id>https://molocher.github.io/2023/02/17/springcloud-eureka/</id>
+    <published>2023-02-17T04:47:03.000Z</published>
+    <updated>2023-03-25T05:10:50.444Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Eureka&quot;&gt;&lt;a href=&quot;#Eureka&quot; class=&quot;headerlink&quot; title=&quot;Eureka&quot;&gt;&lt;/a&gt;Eureka&lt;/h2&gt;&lt;p&gt;Eureka 一词来源于古希腊词汇，是“发现了”的意思。在软件领域，Eureka 是 Netflix</summary>
+        
+      
+    
+    
+    
+    <category term="微服务" scheme="https://molocher.github.io/categories/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
+    
+    
+    <category term="SpringCloud" scheme="https://molocher.github.io/tags/SpringCloud/"/>
+    
+    <category term="微服务" scheme="https://molocher.github.io/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
+    
+    <category term="Eureka" scheme="https://molocher.github.io/tags/Eureka/"/>
+    
+  </entry>
+  
 </feed>
