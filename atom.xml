@@ -6,7 +6,7 @@
   <link href="https://molocher.github.io/atom.xml" rel="self"/>
   
   <link href="https://molocher.github.io/"/>
-  <updated>2023-04-10T07:41:28.222Z</updated>
+  <updated>2023-04-11T07:39:31.279Z</updated>
   <id>https://molocher.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Java内置锁原理</title>
+    <link href="https://molocher.github.io/2023/04/11/java-nei-zhi-suo-yuan-li/"/>
+    <id>https://molocher.github.io/2023/04/11/java-nei-zhi-suo-yuan-li/</id>
+    <published>2023-04-11T07:32:13.000Z</published>
+    <updated>2023-04-11T07:39:31.279Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Java内置锁的核心原理&quot;&gt;&lt;a href=&quot;#Java内置锁的核心原理&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="多线程" scheme="https://molocher.github.io/categories/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
+    
+    
+    <category term="Java" scheme="https://molocher.github.io/tags/Java/"/>
+    
+    <category term="多线程" scheme="https://molocher.github.io/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
+    
+  </entry>
   
   <entry>
     <title>ThreadLocal原理</title>
@@ -93,9 +120,9 @@
     <category term="MQ" scheme="https://molocher.github.io/categories/MQ/"/>
     
     
-    <category term="MQ" scheme="https://molocher.github.io/tags/MQ/"/>
-    
     <category term="Java" scheme="https://molocher.github.io/tags/Java/"/>
+    
+    <category term="MQ" scheme="https://molocher.github.io/tags/MQ/"/>
     
     <category term="后端" scheme="https://molocher.github.io/tags/%E5%90%8E%E7%AB%AF/"/>
     
